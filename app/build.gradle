@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.application'
-}
 
+}
+apply plugin: 'realm-android'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -15,7 +16,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    realm {
+        syncEnabled = true
+    }
     buildTypes {
         release {
             minifyEnabled false
